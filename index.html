@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Image Vertical Slider</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Open Sans', sans-serif;
+        height: 100vh;
+      }
+
+      .slider-container {
+        position: relative;
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+      }
+
+      .left-slide {
+        height: 100%;
+        width: 35%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .left-slide > div {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+      }
+
+      .left-slide h1 {
+        font-size: 40px;
+        margin-bottom: 10px;
+        margin-top: -30px;
+      }
+
+      .right-slide {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 35%;
+        width: 65%;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .right-slide > div {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        height: 100%;
+        width: 100%;
+      }
+
+      button {
+        background-color: #fff;
+        border: none;
+        color: #aaa;
+        cursor: pointer;
+        font-size: 16px;
+        padding: 15px;
+      }
+
+      button:hover {
+        color: #222;
+      }
+
+      button:focus {
+        outline: none;
+      }
+
+      .slider-container .action-buttons button {
+        position: absolute;
+        left: 35%;
+        top: 50%;
+        z-index: 100;
+      }
+
+      .slider-container .action-buttons .down-button {
+        transform: translateX(-100%);
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+
+      .slider-container .action-buttons .up-button {
+        transform: translateY(-100%);
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slider-container">
+      <div class="left-slide">
+        <div style="background-color: #FD3555">
+          <div>
+            <h1>William Shakespeare</h1><br>
+            <p>No matter how long night,</p>
+            <p>the arrival of daylight Association.</p>
+          </div>
+        </div>
+        <div style="background-color: #A6A6D2">
+          <div>
+            <h1>René Descartes</h1><br>
+            <p>I think, therefore I am.</p>
+          </div>
+        </div>
+        <div style="background-color: #292929">
+          <div>
+            <h1>Oscar Wilde</h1><br>
+            <p>We are all in the gutter,</p>
+            <p>but some of us are looking at the stars.</p>
+          </div>
+        </div>
+        <div style="background-color: #00CACA">
+          <div>
+            <h1>Rabindranath Tagore</h1><br>
+            <p>If you shed tears when you miss the sun,  </p>
+            <p>you also miss the stars. </p>
+          </div>
+        </div>
+      </div>
+      <div class="right-slide">  
+        <div style="background-image: url('unsplash1-2.jpg')"></div>
+        <div style="background-image: url('unsplash4.jpg')"></div>
+        <div style="background-image: url('unsplash3.jpg')"></div>
+        <div style="background-image: url('unsplash2-3.png')"></div>
+      </div>
+      <div class="action-buttons">
+        <button class="down-button">
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <button class="up-button">
+          <i class="fas fa-chevron-up"></i>
+        </button>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+
+</html>
